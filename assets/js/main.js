@@ -31,7 +31,7 @@ function linkAction() {
 
 function scrollHeader() {
     const header = document.getElementById("header");
-    if(this.scrollY >= 50) {
+    if(this.scrollY >= 200) {
         header.classList.add("scroll-header");
     }
     else {
