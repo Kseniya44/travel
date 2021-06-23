@@ -127,7 +127,7 @@ input {
 .container {
   max-width: 968px;
   margin-left: var(--mb-1);
-  margin-right: var(--mb-2);
+  margin-right: var(--mb-1);
 }
 
 .grid {
@@ -258,7 +258,7 @@ input {
   font-size: var(--biggest-font-size);
   font-weight: var(--font-medium);
   margin-bottom: var(--mb-2-5);
-  width: 275px;
+  max-width: 275px;
 }
 
 .big-title {
@@ -274,7 +274,7 @@ input {
 
 .home__link {
   font-size: 1.2rem;
-  width: max-content;
+  max-width: max-content;
   display: flex;
 }
 
@@ -284,7 +284,7 @@ input {
   padding: 1.5rem 1rem;
   align-items: center;
   column-gap: .5rem;
-  width: 228px;
+  max-width: 228px;
 }
 
 .home__text {
@@ -360,4 +360,45 @@ input {
 
 .about__imgs img:hover {
   transform: var(--img-scale);
+}
+
+/* discover */
+.discover__card {
+  position: relative;
+  width: 200px;
+  overflow: var(--img-hidden);
+}
+
+.discover__data {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1rem;
+}
+
+.discover__title, 
+.discover__description {
+  color: var(--white--color);
+}
+
+.discover__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-25);
+}
+
+.discover__description {
+  display: block;
+  font-size: var(--small-font-size);
+}
+
+.discover__img {
+  transition: var(--img-transition);
+}
+
+.discover__img:hover {
+  transform: var(--img-scale);
+}
+
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right {
+  /* background-image: none; */
 }
