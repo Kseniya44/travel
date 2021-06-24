@@ -15,8 +15,8 @@ if(navClose) {
         navMenu.classList.remove("show-menu");
     })
 }
-//remove menu mobile
 
+//remove menu mobile
 const navLink = document.querySelectorAll(".nav__link");
 
 navLink.forEach((n) => {
@@ -27,8 +27,8 @@ function linkAction() {
     const navMenu = document.getElementById("nav-menu");
     navMenu.classList.remove("show-menu");
 }
-//change backgrond header
 
+//change backgrond header
 function scrollHeader() {
     const header = document.getElementById("header");
     if(this.scrollY >= 200) {
@@ -41,7 +41,6 @@ function scrollHeader() {
 window.addEventListener("scroll", scrollHeader);
 
 // swiper 
-
 let swiper = new Swiper(".discover__container", {
     effect: "coverflow",
     grabCursor: true,
@@ -53,3 +52,30 @@ let swiper = new Swiper(".discover__container", {
         rotate: 0,
     },
 });
+
+// video
+
+const videoFile = document.getElementById("video-file"),
+    videoButton = document.getElementById("video-button"),
+    videoIcon = document.getElementById("video-icon");
+
+videoButton.addEventListener("click", playPause);
+videoFile.addEventListener("ended", finalVideo);
+
+function playPause() {
+    if(videoFile.paused) {
+        videoFile.play();
+        videoIcon.classList.add("ri-pause-line");
+        videoIcon.classList.remove("ri-play-line");
+    }else {
+        videoFile.pause();
+        videoIcon.classList.remove("ri-pause-line");
+        videoIcon.classList.add("ri-play-line");
+    }
+}
+
+function finalVideo() {
+    videoIcon.classList.remove("ri-pause-line");
+    videoIcon.classList.add("ri-play-line");
+}
+
