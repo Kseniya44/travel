@@ -79,3 +79,41 @@ function finalVideo() {
     videoIcon.classList.add("ri-play-line");
 }
 
+// show scroll up 
+window.addEventListener("scroll", scrollUp);
+
+function scrollUp() {
+    const scrollUp = document.getElementById("scroll-up");
+
+    if(this.scrollY >= 200) {
+        scrollUp.classList.add("show-scroll");
+    }else {
+        scrollUp.classList.remove("show-scroll");
+    }
+}
+
+// scroll reveal animaiton
+
+const sr = ScrollReveal({
+    distance: "60px",
+    duration: 2800,
+})
+
+sr.reveal(`.home__data, .home__link, 
+            .home__info, .discover__container, 
+            .experience__data,
+            .experience__overlay, .place__card,
+            .sponsor__content, .footer__data, .footer__rights`, {
+    origin: "top",
+    interval: 100,
+    reset: true
+})
+
+sr.reveal(".about__data, .video__description, .subscribe__description", {
+    origin: "left",
+})
+
+sr.reveal(".about__imgs, .video__container, .subscribe__form", {
+    origin: "right",
+    interval: 100,
+})
